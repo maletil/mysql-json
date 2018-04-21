@@ -52,9 +52,5 @@ function getArraySQL($sql){
 function sqlRequest ($sql, $auth){
     //TODO authcode.
     $outputArray = getArraySQL($sql);
-    if (json_encode($outputArray)){
-        echo json_encode($outputArray);
-    } else {
-        echo "Error: Check mysqli request encoding or array.";
-    }
+    echo json_encode($outputArray, JSON_UNESCAPED_UNICODE);
 }
