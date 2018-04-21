@@ -51,6 +51,8 @@ function getArraySQL($sql){
 
 function sqlRequest ($sql, $auth){
     //TODO authcode.
+    if ($sql !== ""){
     $outputArray = getArraySQL($sql);
     echo json_encode($outputArray, JSON_UNESCAPED_UNICODE);
+    }
 }
