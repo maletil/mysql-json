@@ -5,7 +5,7 @@ Bare-bone sql request with json output.
 
 Requires 'auth' parameter in query.
 
-## Output:
+### Output:
 
 ```JSON
 {
