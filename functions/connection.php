@@ -39,20 +39,22 @@ function mysqlDBDisconnect ($conn) {
 
 function getArraySQL($sql){
     $conn = mysqlDBConnect();
+    $entries = 0;
     if(!$result = mysqli_query($conn, $sql)) die();
 
     $sqlArray = array();
     while($row =mysqli_fetch_assoc($result)) {
         $sqlArray[] = $row;
+        $entries++;
     }
     mysqlDBDisconnect($conn);
-    return $sqlArray;
+    return array("entries" => $entries, "output" => $sqlArray);
 }
 
 function sqlRequest ($sql, $auth){
     //TODO authcode.
     if ($sql !== ""){
     $outputArray = getArraySQL($sql);
-    echo json_encode($outputArray, JSON_UNESCAPED_UNICODE);
+    return json_encode($outputArray, JSON_UNESCAPED_UNICODE);
     }
 }
