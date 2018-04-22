@@ -40,8 +40,8 @@ function mysqlDBDisconnect ($conn) {
 function getArraySQL($sql){
     $conn = mysqlDBConnect();
     $entries = 0;
-    if(!$result = mysqli_query($conn, $sql)) die();
-
+    if(!$result = mysqli_query($conn, $sql)) return(array("entries" => $entries));
+    
     $sqlArray = array();
     while($row =mysqli_fetch_assoc($result)) {
         $sqlArray[] = $row;

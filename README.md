@@ -21,7 +21,7 @@ Requires 'auth' parameter in query.
       "Added": "2018-04-22 11:16:35",
       "Type": "magazine",
       "Code": "A26014",
-      "Cost": 9.2
+      "Price": 9.2
     }
   ]
 }
